@@ -23,6 +23,10 @@ purpose**: run one or the other, never both.
   overrides, and two of the engine's display modes never consult the palette
   registry at all.
 
+- **The bench can drive `PLAYER`.** The colour row is published, so the
+  nightly's test bench can turn it from `START > BENCH` and you can watch the
+  walker change without opening three menus first.
+
 Everything else is the mod you know: nine colours for the player, the
 `GREEN`/`WILD`/`VERSION` name list, and not one green pixel shipped — the art
 is recoloured from your own imported cache at install and `PLAYER = RED` hands

@@ -1,0 +1,31 @@
+{
+  "id": "gen1_bench_nightly",
+  "title": "Test Bench",
+  "author": "Wild",
+  "summary": "Nightly only. A BENCH row on the START menu with everything this channel is changing on one screen -- the UI theme, the player's colour, the display mode, the battle layout, the backdrops -- and a battle on demand. It ships on no release.",
+  "version": "0.2.0",
+  "categories": [
+    "TOOL"
+  ],
+  "tags": [
+    "nightly",
+    "tool",
+    "testing",
+    "bench",
+    "debug"
+  ],
+  "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+  "github": "wild1walker/Gen1NightlyMods",
+  "automatic_version_check": true,
+  "api": 2,
+  "game_version": ">=0.1.37 <2.0.0",
+  "profile": "content",
+  "affects_link": false,
+  "permissions": [
+    "engine_internals"
+  ],
+  "games": [
+    "gen1"
+  ],
+  "license": "MIT"
+}

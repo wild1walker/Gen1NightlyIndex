@@ -190,9 +190,89 @@ GEN1_WILD_UI_NIGHTLY = (
     "................................",
 )
 
+# The same device as the UI one, with the other half's letters on it -- which
+# is the pairing the stable index already draws for these two, so somebody who
+# knows those cards knows these.
+GEN1_WILD_QOL_NIGHTLY = (
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "...kkkkkkkkkkkkkkkkkkkkkkkkk....",
+    "...kPPPPPPPPPPPPPPPPPPPPPPPk....",
+    "...kPpppppppppppppppppppppPk....",
+    "...kPpkkkkkkkkkkkkkkkkkkkpPk....",
+    "...kPpkeeeeeeeeeeeeeeeeekpPk....",
+    "...kPpkeeelleeelleeleeeekpPk....",
+    "...kPpkeeleeleleeleleeeekpPk....",
+    "...kPpkeeleeleleeleleeeekpPk....",
+    "...kPpkeeelleeleeleleeeekpPk....",
+    "...kPpkeeeeeleelleellllekpPk....",
+    "...kPpkeeeeeeeeeeeeeeeeekpPk....",
+    "...kPpkkkkkkkkkkkkkkkkkkkpPk....",
+    "...kPpppppppppppppppppppppPk....",
+    "...kPpppdddpppppppppppppppPk....",
+    "...kPpppdddppppppdddpdddppPk....",
+    "...kPpdddddddppppdddpdddppPk....",
+    "...kPpppdddppppppdddpdddppPk....",
+    "...kPpppdddpppppppppppppppPk....",
+    "...kPpppppppppppppppppppppPk....",
+    "...kkkkkkkkkkkkkkkkkkkkkkkkk....",
+    "................................",
+)
+
+# A bench is a list of things to check, so that is what it is: a board, a clip,
+# and three rows ticked off.  Kept left of x=20 and below y=10, which is where
+# the shared crescent goes -- the badge is stamped over the grid, and a board it
+# had punched a hole in would read as a broken picture rather than as a moon
+# behind one.
+GEN1_BENCH_NIGHTLY = (
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "................................",
+    "........kkkkkkk.................",
+    "........klllllk.................",
+    "........klppplk.................",
+    "...kkkkkklppplkkkkkk............",
+    "...kppppklllllkppppk............",
+    "...kpdddkkkkkkkdddpk............",
+    "...kpddddddddmddddpk............",
+    "...kpdddddddmdddddpk............",
+    "...kpddmdddmddddddpk............",
+    "...kpdddmdmdddllldpk............",
+    "...kpddddmddddllldpk............",
+    "...kpddddddddmddddpk............",
+    "...kpdddddddmdddddpk............",
+    "...kpddmdddmddddddpk............",
+    "...kpdddmdmdddllldpk............",
+    "...kpddddmddddllldpk............",
+    "...kpddddddddmddddpk............",
+    "...kpdddddddmdddddpk............",
+    "...kpddmdddmddddddpk............",
+    "...kpdddmdmdddllldpk............",
+    "...kpddddmddddllldpk............",
+    "...kpdddddddddddddpk............",
+    "...kpppppppppppppppk............",
+    "...kkkkkkkkkkkkkkkkk............",
+    "................................",
+    "................................",
+)
+
 ICONS = {
     "wild_green_nightly": WILD_GREEN_NIGHTLY,
     "gen1_wild_ui_nightly": GEN1_WILD_UI_NIGHTLY,
+    "gen1_wild_qol_nightly": GEN1_WILD_QOL_NIGHTLY,
+    "gen1_bench_nightly": GEN1_BENCH_NIGHTLY,
 }
 
 

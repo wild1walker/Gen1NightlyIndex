@@ -30,6 +30,22 @@ The asterisk means what it says: the battle command grid's four buttons
 (`FIGHT` / `PKMN` / `ITEM` / `RUN`) are the clearest buttons in the suite and
 are not coloured yet.
 
+## Also new in 0.2.0
+
+**No more white bar above a wide arena.** A battle asks the renderer for a
+white surround, which is right when the field is white paper and wrong when it
+is a picture: the surround stops disappearing and becomes a bright frame around
+the art — and a wide battle is 304x144, so the bars above and below it are the
+biggest thing on the screen. The backdrop's own edge is stretched into them now,
+so the picture runs off the screen instead of stopping at a rectangle.
+`EDGE TO EDGE` turns it off.
+
+**`BLACK OUTRO` holds at the cut.** It used to be at full black for exactly one
+frame — the frame that pops the fade, runs the engine's own ending and pushes
+it back — so that was the only covered moment the whole outro had, and the
+autosave found it. It now holds for the ten frames the engine's own return
+holds.
+
 ## Everything else
 
 Unchanged from the stable bundle: battle backdrops, the battle intro, the

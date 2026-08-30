@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-30T05:33:13Z",
-  "count": 2,
+  "generated_at": "2026-08-30T06:01:46Z",
+  "count": 4,
   "categories": [
     "GAMEPLAY",
     "CONTENT",
@@ -18,11 +18,50 @@
   ],
   "mods": [
     {
+      "id": "gen1_wild_qol_nightly",
+      "title": "Gen1WildQOL Nightly",
+      "author": "Wild",
+      "summary": "Nightly. The quality-of-life half of the suite in one mod: sprinting, autosave, auto continue, sound, followers, all 151, EXP share, the move reminder, menu layout and the mod manager. Every feature switches on and off by itself.",
+      "version": "0.2.0",
+      "featured": true,
+      "categories": [
+        "QOL",
+        "GAMEPLAY"
+      ],
+      "tags": [
+        "nightly",
+        "bundle",
+        "collection",
+        "autosave",
+        "sprint",
+        "followers",
+        "all 151",
+        "exp share"
+      ],
+      "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+      "github": "wild1walker/Gen1NightlyMods",
+      "api": 2,
+      "game_version": ">=0.1.37 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "permissions": [
+        "engine_internals"
+      ],
+      "games": [
+        "gen1"
+      ],
+      "license": "MIT",
+      "folder": "Wild@gen1_wild_qol_nightly",
+      "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_qol_nightly/thumbnail.png",
+      "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_qol_nightly/description.md",
+      "update_check": "no installable release"
+    },
+    {
       "id": "gen1_wild_ui_nightly",
       "title": "Gen1WildUI Nightly",
       "author": "Wild",
       "summary": "Nightly. The visual half of the suite in one mod, plus a UI THEME row on the OPTION screen: LIGHT, DARK, or COLORFUL (work in progress). Every feature still switches on and off by itself.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "featured": true,
       "categories": [
         "UI",
@@ -59,11 +98,45 @@
       "update_check": "no installable release"
     },
     {
+      "id": "gen1_bench_nightly",
+      "title": "Test Bench",
+      "author": "Wild",
+      "summary": "Nightly only. A BENCH row on the START menu with everything this channel is changing on one screen -- the UI theme, the player's colour, the display mode, the battle layout, the backdrops -- and a battle on demand. It ships on no release.",
+      "version": "0.2.0",
+      "categories": [
+        "TOOL"
+      ],
+      "tags": [
+        "nightly",
+        "tool",
+        "testing",
+        "bench",
+        "debug"
+      ],
+      "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+      "github": "wild1walker/Gen1NightlyMods",
+      "api": 2,
+      "game_version": ">=0.1.37 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "permissions": [
+        "engine_internals"
+      ],
+      "games": [
+        "gen1"
+      ],
+      "license": "MIT",
+      "folder": "Wild@gen1_bench_nightly",
+      "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_bench_nightly/thumbnail.png",
+      "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_bench_nightly/description.md",
+      "update_check": "no installable release"
+    },
+    {
       "id": "wild_green_nightly",
       "title": "Wild Green Nightly",
       "author": "Wild",
       "summary": "Nightly. The player wears green and is called GREEN, and the title screen says WILD GREEN VERSION. PLAYER now takes effect where you are standing, the version ribbon follows the colour you picked, and the title screen's bands are right in every display mode.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "categories": [
         "ART"
       ],
@@ -108,9 +181,9 @@
       "id": "wild_green_nightly",
       "title": "Wild Green Nightly",
       "author": "Wild",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "featured": true,
-      "summary": "Wild Green with the changes that are not in a release yet: a dark mode, a title screen that is the right colour in every display mode, and a player colour that takes effect where you are standing.",
+      "summary": "Wild Green with the changes that are not in a release yet, plus a test bench on the START menu. For testing, not for a playthrough you care about.",
       "base": "red",
       "seal": "sealed",
       "shell": "#54377e",
@@ -130,11 +203,11 @@
       "license": "MIT",
       "mods": [
         {
-          "id": "gen1_wild_qol",
+          "id": "gen1_wild_qol_nightly",
           "source": "github",
-          "repo": "wild1walker/Gen1WildQOL",
-          "version": "1.26.0",
-          "sha256": "e15ba6bf6ca8457c9322f72b8a12eca5d849ce4ecd00e1bb746ddb43985ceca4"
+          "repo": "wild1walker/Gen1NightlyMods",
+          "version": "0.2.0",
+          "sha256": "bc21c161f2ac8522ff3fea61774b983074e3583916d2676f5a223648eef3bbed"
         },
         {
           "id": "crystal_animated_sprites_with_shiny_visuals",
@@ -147,25 +220,33 @@
           "id": "gen1_wild_ui_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.1.0",
-          "sha256": "ad7ae021dd847435d169f59ccb2a91df5e1c0d114cb82206b8d1b346c14b9364"
+          "version": "0.2.0",
+          "sha256": "8c923ed4b6d9a0d3633ad2883600991f3b259383317308b197b92f22ae7ff8b4"
         },
         {
           "id": "wild_green_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.1.0",
-          "sha256": "a62bf2160104950f0afaaad5dc73d1acb03914279c5f09c7e9d237b1eeaf9912",
+          "version": "0.2.0",
+          "sha256": "9328aaf926cda4c11a78f0a132fda7a026a739988093963762beac2793281e0a",
           "options": {
             "ribbon": true
           }
+        },
+        {
+          "id": "gen1_bench_nightly",
+          "source": "github",
+          "repo": "wild1walker/Gen1NightlyMods",
+          "version": "0.2.0",
+          "sha256": "4e048add10d6b417e0f0ace2aee05c5a62cb9eb09e2f4899acbc32b0767f572e"
         }
       ],
       "load_order": [
-        "gen1_wild_qol",
+        "gen1_wild_qol_nightly",
         "crystal_animated_sprites_with_shiny_visuals",
         "gen1_wild_ui_nightly",
-        "wild_green_nightly"
+        "wild_green_nightly",
+        "gen1_bench_nightly"
       ],
       "folder": "Wild@wild_green_nightly",
       "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_green_nightly/thumbnail.png",

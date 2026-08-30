@@ -50,11 +50,9 @@ adding both is fine — neither feed knows about the other.
 | | Mod | What it is |
 |---|---|---|
 | <img src="mods/Wild@gen1_wild_ui_nightly/thumbnail.png" width="54" alt=""> | **Gen1WildUI Nightly** | The visual half of the suite, plus a `UI THEME` row on the OPTION screen: `LIGHT`, `DARK` or `COLORFUL*`. |
+| <img src="mods/Wild@gen1_wild_qol_nightly/thumbnail.png" width="54" alt=""> | **Gen1WildQOL Nightly** | The quality-of-life half. Autosave no longer lands in the middle of the fade out of a battle. |
 | <img src="mods/Wild@wild_green_nightly/thumbnail.png" width="54" alt=""> | **Wild Green Nightly** | The player in green, the names, and the title screen — with `PLAYER` live and the title's colours right in every display mode. |
-
-**Gen1WildQOL is not forked.** Nothing in the current work touches it, and a
-fork with no changes in it is a fork that only rots, so the nightly cart pins
-the released one exactly as the stable cart does.
+| <img src="mods/Wild@gen1_bench_nightly/thumbnail.png" width="54" alt=""> | **Test Bench** | **Nightly only.** A `BENCH` row on the START menu with everything this channel is changing on one screen, and a battle on demand. It ships on no release. |
 
 ## What is in this nightly
 
@@ -76,6 +74,20 @@ box blue, the party the green of a full HP bar, the bag leather, the mart gold
 before you have read the word. Nothing shouts: every tint holds the lightness
 the black-and-white page had, so no word is harder to read than it was. The
 asterisk is real — the battle command grid's four buttons are not coloured yet.
+
+### Autosave stopped landing in the middle of a fade
+
+It knew that a fade is an animation and only knew it about the overworld's
+fades — and the end of a battle is a stack state with a veil of its own, so
+those frames were treated as the quietest in the game. They are the ones you
+watch most closely.
+
+### No more white bar above a wide arena
+
+A battle asks the renderer for a white surround, which is right when the field
+is white paper and wrong when it is a picture. The backdrop's own edge is
+stretched into the bars now, so the picture runs off the screen instead of
+stopping at a rectangle.
 
 ### The title screen is the right colour again
 
