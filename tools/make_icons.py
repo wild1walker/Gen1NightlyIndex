@@ -35,6 +35,7 @@ A folder with no icon is named on the way out and makes the run exit non-zero,
 so an entry cannot quietly go without one.
 """
 
+import json
 import pathlib
 import struct
 import sys
@@ -268,8 +269,16 @@ GEN1_BENCH_NIGHTLY = (
     "................................",
 )
 
+# `wild_green_nightly` is deliberately not here.  It is not a mod somebody
+# browses beside the others -- it is what the nightly CARTRIDGE is, and it
+# carries the cart's name in the launcher, so it wears the cart's own label
+# instead of anything drawn in this file.  tools/build_index.py syncs it from
+# the mods repo, the same way the cart's listing already did.
+#
+# The grid it used to use is left below rather than deleted: it is the only
+# record of what the icon looked like, and a channel that grows a second green
+# cart may want it back.
 ICONS = {
-    "wild_green_nightly": WILD_GREEN_NIGHTLY,
     "gen1_wild_ui_nightly": GEN1_WILD_UI_NIGHTLY,
     "gen1_wild_qol_nightly": GEN1_WILD_QOL_NIGHTLY,
     "gen1_bench_nightly": GEN1_BENCH_NIGHTLY,
@@ -349,6 +358,17 @@ def folders():
     return out
 
 
+def wears_a_label(folder):
+    """Does this listing take art from its own repo instead of an icon here?"""
+    meta = folder / "meta.json"
+    if not meta.is_file():
+        return False
+    try:
+        return bool(json.loads(meta.read_text(encoding="utf-8")).get("label"))
+    except (ValueError, OSError):
+        return False
+
+
 def main(argv):
     wanted = set(argv[1:])
     listed = folders()
@@ -363,6 +383,13 @@ def main(argv):
             continue
         rows = ICONS.get(mod_id)
         if rows is None:
+            # A folder whose meta.json names `label` wears art from its own
+            # repo, synced by tools/build_index.py, and has no business having
+            # one drawn here.  Anything else with no grid is a mod nobody has
+            # drawn yet, which is still worth failing over.
+            if wears_a_label(folder):
+                print("  %s wears its own label" % folder.name)
+                continue
             missing.append(mod_id)
             continue
         body = png_bytes(render(rows))

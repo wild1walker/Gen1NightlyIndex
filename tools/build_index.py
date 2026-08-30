@@ -262,8 +262,8 @@ def fetch_cart_json(slug):
         return None, f"{CART_FILE} is not JSON: {e}"
 
 
-def sync_cart_label(slug, cart, folder):
-    """The cart's own label art, as this listing's thumbnail.
+def sync_label(slug, name, folder):
+    """Art from the source repo, as this listing's thumbnail.
 
     A mod's icon is drawn here by make_icons.py; a cart's is its cartridge,
     and the cartridge is drawn in the cart's repo.  Copying it by hand is a
@@ -271,8 +271,14 @@ def sync_cart_label(slug, cart, folder):
     the card kept the old label -- so it is fetched like the pins are, and
     written verbatim.  No scaling: the page sizes icons in CSS, and the
     hourly job runs on the standard library alone.
+
+    A MOD can name one too, and one does.  `wild_green_nightly` is not a mod
+    somebody browses beside the others -- it is what the nightly cartridge IS,
+    and it carries the cart's name in the launcher.  It used to wear an icon
+    drawn here, and being handed a picture of a hat where you expect the
+    cartridge is confusing in a way no amount of it being a nice hat fixes.
+    So it wears the cartridge.
     """
-    name = cart.get("label")
     if not isinstance(name, str) or not name.lower().endswith(".png"):
         return None
     body, problem = fetch_raw(slug, name)
@@ -313,7 +319,7 @@ def build_carts():
         row.pop("automatic_version_check", None)
 
         if cart:
-            problem = sync_cart_label(source, cart, folder)
+            problem = sync_label(source, cart.get("label"), folder)
             if problem:
                 print(f"::warning::{folder.name}: {problem}", file=sys.stderr)
             # The cart decides what it is; the listing only says where to find
@@ -409,6 +415,15 @@ def build():
         row = dict(meta)
         row["folder"] = folder.name
         row.pop("automatic_version_check", None)     # a build input, not feed data
+        row.pop("label", None)                       # a build input, not feed data
+
+        # A mod that names art in its own repo wears that instead of an icon
+        # drawn here -- see sync_label.
+        label = meta.get("label")
+        if label:
+            problem = sync_label(meta.get("github", ""), label, folder)
+            if problem:
+                print(f"::warning::{folder.name}: {problem}", file=sys.stderr)
 
         # Absolute, so the card's picture and text load whether or not Pages
         # is serving this repo.

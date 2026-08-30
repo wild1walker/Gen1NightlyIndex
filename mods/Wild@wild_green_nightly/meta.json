@@ -17,6 +17,7 @@
   ],
   "repo": "https://github.com/wild1walker/Gen1NightlyMods",
   "github": "wild1walker/Gen1NightlyMods",
+  "label": "label.png",
   "automatic_version_check": true,
   "api": 2,
   "game_version": ">=0.1.37 <2.0.0",
