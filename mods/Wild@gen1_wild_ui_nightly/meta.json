@@ -3,7 +3,7 @@
   "title": "Gen1WildUI Nightly",
   "author": "Wild",
   "summary": "Nightly. The visual half of the suite in one mod, plus a UI THEME row on the OPTION screen: LIGHT, DARK, or COLORFUL (work in progress). Every feature still switches on and off by itself.",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "featured": true,
   "categories": [
     "UI",
