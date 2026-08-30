@@ -3,7 +3,7 @@
   "title": "Gen1WildQOL Nightly",
   "author": "Wild",
   "summary": "Nightly. The quality-of-life half of the suite in one mod: sprinting, autosave, auto continue, sound, followers, all 151, EXP share, the move reminder, menu layout and the mod manager. Every feature switches on and off by itself.",
-  "version": "0.29.0",
+  "version": "0.29.1",
   "featured": true,
   "categories": [
     "QOL",
