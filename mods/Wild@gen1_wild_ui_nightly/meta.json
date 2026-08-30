@@ -1,0 +1,38 @@
+{
+  "id": "gen1_wild_ui_nightly",
+  "title": "Gen1WildUI Nightly",
+  "author": "Wild",
+  "summary": "Nightly. The visual half of the suite in one mod, plus a UI THEME row on the OPTION screen: LIGHT, DARK, or COLORFUL (work in progress). Every feature still switches on and off by itself.",
+  "version": "0.1.0",
+  "featured": true,
+  "categories": [
+    "UI",
+    "ART"
+  ],
+  "tags": [
+    "nightly",
+    "bundle",
+    "collection",
+    "ui",
+    "dark mode",
+    "theme",
+    "pokedex",
+    "party",
+    "bag",
+    "backdrops"
+  ],
+  "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+  "github": "wild1walker/Gen1NightlyMods",
+  "automatic_version_check": true,
+  "api": 2,
+  "game_version": ">=0.1.37 <2.0.0",
+  "profile": "content",
+  "affects_link": false,
+  "permissions": [
+    "engine_internals"
+  ],
+  "games": [
+    "gen1"
+  ],
+  "license": "MIT"
+}

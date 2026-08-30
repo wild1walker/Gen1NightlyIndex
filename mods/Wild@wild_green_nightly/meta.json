@@ -1,0 +1,32 @@
+{
+  "id": "wild_green_nightly",
+  "title": "Wild Green Nightly",
+  "author": "Wild",
+  "summary": "Nightly. The player wears green and is called GREEN, and the title screen says WILD GREEN VERSION. PLAYER now takes effect where you are standing, the version ribbon follows the colour you picked, and the title screen's bands are right in every display mode.",
+  "version": "0.1.0",
+  "categories": [
+    "ART"
+  ],
+  "tags": [
+    "nightly",
+    "art",
+    "player",
+    "sprites",
+    "title",
+    "green"
+  ],
+  "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+  "github": "wild1walker/Gen1NightlyMods",
+  "automatic_version_check": true,
+  "api": 2,
+  "game_version": ">=0.1.37 <2.0.0",
+  "profile": "content",
+  "affects_link": false,
+  "permissions": [
+    "engine_internals"
+  ],
+  "games": [
+    "red"
+  ],
+  "license": "MIT"
+}

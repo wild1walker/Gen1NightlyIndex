@@ -1,0 +1,362 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gen1Wild Nightly</title>
+<meta name="description" content="The nightly builds of the Gen1Wild suite: the changes that are not in a release yet, for testing. In the game: MODS > FIND MODS, add wild1walker/Gen1NightlyIndex.">
+<meta name="theme-color" content="#0b0d0c">
+
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="icon" href="favicon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<!-- The strip is the unfurl rather than the wordmark: it is opaque, and it
+     shows every mod and its name, which is what someone dropping the
+     link in a chat wants the preview to say. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gen1Wild Nightly">
+<meta property="og:title" content="Gen1Wild Nightly: the test builds, before they reach the cart">
+<meta property="og:description" content="MODS > FIND MODS, add wild1walker/Gen1NightlyIndex. Nightlies land on the cards on their own; the stable cart is untouched.">
+<meta property="og:url" content="https://wild1walker.github.io/Gen1NightlyIndex/">
+<meta property="og:image" content="https://raw.githubusercontent.com/wild1walker/Gen1NightlyMods/main/label.png">
+<meta property="og:image:width" content="2290">
+<meta property="og:image:height" content="231">
+<meta property="og:image:alt" content="Gen151, Gen1Arena, Gen1AutoContinue, Gen1AutoSave, Gen1BillsBox, Gen1Dex, Gen1Follower, Gen1MenuManager, Gen1ModMenu, Gen1ModernBag, Gen1Party, Gen1SoundQOL and Gen1Sprint">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  /* Palette off the wordmark: its yellow is the accent, its shadow blue is
+     the edge.  The ground stays near-black because the mod icons are drawn on
+     near-black, so anything lighter puts a box round every one of them. */
+  :root {
+    color-scheme: dark;
+    --bg: #0b0d0c;
+    --panel: #101314;
+    --line: #1e2427;
+    --line-lit: #3466a6;
+    --ink: #e7ece8;
+    --dim: #8b978f;
+    --brand: #fac613;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 2.5rem 1.25rem 4rem; background: var(--bg); color: var(--ink);
+         font: 16px/1.6 ui-sans-serif, system-ui, sans-serif; }
+  .wrap { max-width: 52rem; margin: 0 auto; }
+
+  /* The wordmark is the heading.  If the image does not arrive the alt text
+     is the heading instead, which is why it is marked up this way and not as
+     a background image. */
+  h1 { margin: 0 0 1.25rem; text-align: center; font-size: 1.9rem; letter-spacing: .02em; }
+  h1 img { display: block; width: 100%; max-width: 30rem; height: auto; margin: 0 auto; }
+
+  .lede { color: var(--dim); margin: 0 auto 1.75rem; max-width: 40rem; text-align: center; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .add { display: block; width: fit-content; max-width: 100%; margin: 0 auto;
+         background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--brand);
+         border-radius: 8px; padding: .7rem 1rem; text-align: center; }
+  .add .cap { display: block; color: var(--dim); font-size: .78rem; letter-spacing: .08em;
+              text-transform: uppercase; margin-bottom: .2rem; }
+  .add code { color: var(--brand); font-size: 1.05rem; background: none; padding: 0; }
+
+  code { background: #161c17; padding: .15em .45em; border-radius: 4px;
+         font: .92em ui-monospace, monospace; color: #cfe0d2; }
+
+  ul { list-style: none; margin: 2.25rem 0 0; padding: 0; display: grid; gap: 1rem; }
+  li { display: flex; gap: 1rem; align-items: flex-start; background: var(--panel);
+       border: 1px solid var(--line); border-radius: 10px; padding: 1rem; }
+  li.msg { display: block; color: var(--dim); }
+  img.icon { width: 112px; aspect-ratio: 1; object-fit: cover; border-radius: 6px;
+             background: var(--bg); flex: none; }
+
+  .name { font-weight: 600; }
+  .ver { color: var(--brand); font-weight: 600; }
+  .meta { color: var(--dim); font-size: .9rem; }
+  .sum { margin: .35rem 0 .5rem; }
+
+  .cats { display: flex; flex-wrap: wrap; gap: .3rem; margin: .45rem 0 0; padding: 0; list-style: none; }
+  .cats li { display: inline; background: none; border: 1px solid var(--line);
+             border-radius: 999px; padding: .1rem .5rem; font-size: .72rem; letter-spacing: .06em;
+             color: var(--dim); }
+
+  a { color: var(--brand); }
+  a:focus-visible { outline: 2px solid var(--line-lit); outline-offset: 2px; }
+
+  /* The whole tile is the link. It is done with a pseudo-element stretched
+     over the card rather than a click handler on the card, so the thing being
+     clicked stays a real anchor: keyboard focus, middle-click, ctrl-click and
+     "copy link address" all keep working, and a screen reader still announces
+     a link. The trade is that a drag no longer selects the card's text. */
+  li.mod { position: relative; cursor: pointer; }
+  li.mod:hover { border-color: var(--line-lit); }
+
+  /* The two bundles. Either one installs most of the list below in a single
+     card, so they are marked rather than merely sorted first -- a reader who
+     lands halfway down the page should still be able to tell which two these
+     were. The brand rule down the left is the same one the "add the index"
+     box uses, which is the other thing on the page that is an instruction
+     rather than a listing. */
+  li.mod.feat { border-color: #2a2f26; border-left: 3px solid var(--brand);
+                background: linear-gradient(180deg, #14150f 0%, var(--panel) 60%); }
+  li.mod.feat img.icon { width: 128px; }
+  .tag { display: inline-block; margin-left: .5rem; padding: .05rem .4rem;
+         border: 1px solid var(--brand); border-radius: 999px; color: var(--brand);
+         font-size: .62rem; letter-spacing: .1em; text-transform: uppercase;
+         vertical-align: .18em; font-weight: 600; }
+  .split { margin: 1.6rem 0 .6rem; color: var(--dim); font-size: .74rem;
+           letter-spacing: .14em; text-transform: uppercase; }
+
+  /* A cart is not a mod: it is a whole game the launcher lists beside Red,
+     so it goes above the mods and wears its own colour rather than the
+     brand yellow -- its own shell colour, set per card from the feed's
+     `shell`, which is the same green the cartridge is drawn in. The rule
+     down the left is the cart's, so two carts never look alike. */
+  li.cart { border-color: #24302a; border-left: 3px solid var(--shell, var(--brand));
+            background: linear-gradient(180deg, #0f1512 0%, var(--panel) 60%); }
+  li.cart img.icon { width: 128px; border-radius: 8px; }
+  li.cart .ver { color: var(--shell, var(--brand)); }
+  li.cart .tag { border-color: var(--shell, var(--brand)); color: var(--shell, var(--brand)); }
+  /* The pinned mods, as one line: a cart's contents are the thing a reader
+     is deciding about, and four names read faster than four cards. */
+  .pins { color: var(--dim); font-size: .82rem; margin: .35rem 0 0; }
+  .pins b { color: var(--ink); font-weight: 600; }
+  .soon { color: var(--dim); font-size: .82rem; margin: .35rem 0 0; font-style: italic; }
+  li.mod:focus-within { outline: 2px solid var(--line-lit); outline-offset: 2px; }
+
+  .stretch { text-decoration: none; color: inherit; }
+  .stretch::after { content: ''; position: absolute; inset: 0; }
+  /* The ring belongs to the whole tile, so the anchor does not draw its own. */
+  .stretch:focus-visible { outline: none; }
+
+  /* No "source" line: the tile itself is the link, so the cues are the
+     pointer cursor, the lit border, and the title underlining on hover. */
+  li.mod:hover .stretch, li.mod:focus-within .stretch { text-decoration: underline; }
+
+  .note { color: var(--dim); font-size: .9rem; margin: 2.5rem 0 0;
+          border-top: 1px solid var(--line); padding-top: 1rem; }
+
+  @media (max-width: 34rem) {
+    li { flex-direction: column; }
+    img.icon { width: 128px; }
+    h1 img { max-width: 20rem; }
+  }
+</style>
+
+<div class="wrap">
+  <!-- onerror rather than the alt text: a block image that 404s renders no
+       alt in Chrome, which would leave the page with no heading at all.
+       It is inline so it is registered before the load can fail. -->
+  <h1>Gen1Wild <span class="cap">Nightly</span></h1>
+
+  <p class="lede">The test builds of the
+    <a href="https://github.com/wild1walker/Gen1Wild">Gen1Wild</a> suite for
+    <a href="https://github.com/bryanthaboi/gen1recomp">gen1recomp</a>: the
+    changes that are not in a release yet. Add it once and each night's build
+    lands on the cards on its own.</p>
+
+  <p class="add">
+    <span class="cap">In the game: MODS &gt; FIND MODS</span>
+    <code>wild1walker/Gen1NightlyIndex</code>
+  </p>
+
+  <noscript><style>#list { display: none; }</style></noscript>
+  <ul id="list"><li class="msg">Loading the feed...</li></ul>
+  <noscript>
+    <ul><li class="msg">The list is drawn from
+      <a href="data/index.json">the feed</a>, which needs JavaScript. The mods
+      are also listed in
+      <a href="https://github.com/wild1walker/Gen1NightlyIndex#what-is-in-it">the
+      README</a>, and the string above works in the game either way.</li></ul>
+  </noscript>
+
+  <p class="note"><strong>These are nightly builds.</strong> They are for
+    testing changes before they reach the stable cart, and they can be broken
+    in ways a release is not. Everything here installs under an id of its own
+    and conflicts with its stable twin on purpose &mdash; run one or the other,
+    never both. Your stable
+    <a href="https://github.com/wild1walker/Gen1WildGreen">Wild Green</a>, its
+    settings and its saves are untouched either way. The releases are
+    <a href="https://github.com/wild1walker/Gen1NightlyMods/releases">in
+    Gen1NightlyMods</a>, and the stable index is
+    <a href="https://wild1walker.github.io/Gen1Wild/">over here</a>.</p>
+</div>
+
+<script>
+  const list = document.getElementById('list');
+  const say = t => { list.innerHTML = ''; const li = document.createElement('li');
+                     li.className = 'msg'; li.textContent = t; list.append(li); };
+
+  fetch('data/index.json').then(r => {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }).then(feed => {
+    const mods = feed.mods || [];
+    const carts = feed.carts || [];
+    if (!mods.length && !carts.length) return say('The feed is empty.');
+    list.innerHTML = '';
+
+    const rule = text => {
+      const li = document.createElement('li');
+      li.className = 'msg split';
+      li.textContent = text;
+      list.append(li);
+    };
+
+    // Carts first. A cart is a whole game rather than something you add to
+    // one, so it is the top of the page and not a category inside it.
+    if (carts.length) {
+      rule(carts.length === 1 ? 'The cart' : 'The carts');
+      for (const c of carts) {
+        const li = document.createElement('li');
+        li.className = 'mod cart';
+        if (c.shell) li.style.setProperty('--shell', c.shell);
+
+        if (c.thumbnail) {
+          const img = document.createElement('img');
+          img.className = 'icon';
+          img.src = c.thumbnail;
+          img.alt = '';
+          img.loading = 'lazy';
+          li.append(img);
+        }
+
+        const box = document.createElement('div');
+
+        const name = document.createElement('div');
+        name.className = 'name';
+        if (c.repo) {
+          const link = document.createElement('a');
+          link.className = 'stretch';
+          link.href = c.repo;
+          link.textContent = c.title;
+          link.setAttribute('aria-label', `${c.title} source`);
+          name.append(link);
+        } else {
+          name.textContent = c.title;
+        }
+        const version = c.update_check === 'ok' && c.latest ? c.latest.version : c.version;
+        if (version) {
+          const v = document.createElement('span');
+          v.className = 'ver';
+          v.textContent = ' ' + version;
+          name.append(v);
+        }
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = 'Cart';
+        name.append(tag);
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = [c.author, c.base && `plays as ${c.base}`, c.seal]
+          .filter(Boolean).join(' · ');
+
+        const sum = document.createElement('p');
+        sum.className = 'sum';
+        sum.textContent = c.summary || '';
+
+        box.append(name, meta, sum);
+
+        if ((c.mods || []).length) {
+          const pins = document.createElement('p');
+          pins.className = 'pins';
+          pins.append('Pins ');
+          const b = document.createElement('b');
+          b.textContent = c.mods.map(m => m.id).join(', ');
+          pins.append(b);
+          box.append(pins);
+        }
+
+        // An honest empty state. A card that looks installable and is not is
+        // worse than one that says it is not there yet.
+        if (c.update_check !== 'ok') {
+          const soon = document.createElement('p');
+          soon.className = 'soon';
+          soon.textContent = c.update_check === 'no installable release'
+            ? 'No release published yet. The card goes live the moment one is.'
+            : `Release lookup: ${c.update_check}`;
+          box.append(soon);
+        }
+
+        li.append(box);
+        list.append(li);
+      }
+      if (mods.length) rule('The mods');
+    }
+
+    if (!mods.length) return;
+    // The feed arrives with the featured entries already first; this only has
+    // to notice where the run ends and say so once.
+    let ruled = false;
+    for (const m of mods) {
+      if (!m.featured && !ruled && mods.some(x => x.featured)) {
+        ruled = true;
+        rule('Everything in them, separately');
+      }
+      const li = document.createElement('li');
+      li.className = m.featured ? 'mod feat' : 'mod';
+      const version = m.update_check === 'ok' && m.latest ? m.latest.version : m.version;
+
+      if (m.thumbnail) {
+        const img = document.createElement('img');
+        img.className = 'icon';
+        img.src = m.thumbnail;
+        img.alt = '';
+        img.loading = 'lazy';
+        li.append(img);
+      }
+
+      const box = document.createElement('div');
+
+      const name = document.createElement('div');
+      name.className = 'name';
+      // The title carries the link; the version sits outside it so the link is
+      // announced as the mod's name rather than the name and a number.
+      if (m.repo) {
+        const link = document.createElement('a');
+        link.className = 'stretch';
+        link.href = m.repo;
+        link.textContent = m.title;
+        link.setAttribute('aria-label', `${m.title} source`);
+        name.append(link);
+      } else {
+        name.textContent = m.title;
+      }
+      if (version) {
+        const v = document.createElement('span');
+        v.className = 'ver';
+        v.textContent = ' ' + version;
+        name.append(v);
+      }
+      if (m.featured) {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = 'Bundle';
+        name.append(tag);
+      }
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.textContent = m.author || '';
+
+      const sum = document.createElement('p');
+      sum.className = 'sum';
+      sum.textContent = m.summary || '';
+
+      box.append(name, meta, sum);
+
+      if ((m.categories || []).length) {
+        const cats = document.createElement('ul');
+        cats.className = 'cats';
+        for (const c of m.categories) {
+          const tag = document.createElement('li');
+          tag.textContent = c;
+          cats.append(tag);
+        }
+        box.append(cats);
+      }
+
+      li.append(box);
+      list.append(li);
+    }
+  }).catch(() => say('Could not load data/index.json.'));
+</script>

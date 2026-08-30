@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-30T05:30:51Z",
+  "count": 2,
+  "categories": [
+    "GAMEPLAY",
+    "CONTENT",
+    "BALANCE",
+    "ART",
+    "AUDIO",
+    "UI",
+    "QOL",
+    "TRANSLATION",
+    "TOTAL_CONVERSION",
+    "LIBRARY",
+    "TOOL",
+    "OTHER"
+  ],
+  "mods": [
+    {
+      "id": "gen1_wild_ui_nightly",
+      "title": "Gen1WildUI Nightly",
+      "author": "Wild",
+      "summary": "Nightly. The visual half of the suite in one mod, plus a UI THEME row on the OPTION screen: LIGHT, DARK, or COLORFUL (work in progress). Every feature still switches on and off by itself.",
+      "version": "0.1.0",
+      "featured": true,
+      "categories": [
+        "UI",
+        "ART"
+      ],
+      "tags": [
+        "nightly",
+        "bundle",
+        "collection",
+        "ui",
+        "dark mode",
+        "theme",
+        "pokedex",
+        "party",
+        "bag",
+        "backdrops"
+      ],
+      "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+      "github": "wild1walker/Gen1NightlyMods",
+      "api": 2,
+      "game_version": ">=0.1.37 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "permissions": [
+        "engine_internals"
+      ],
+      "games": [
+        "gen1"
+      ],
+      "license": "MIT",
+      "folder": "Wild@gen1_wild_ui_nightly",
+      "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_ui_nightly/thumbnail.png",
+      "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_ui_nightly/description.md",
+      "update_check": "no installable release"
+    },
+    {
+      "id": "wild_green_nightly",
+      "title": "Wild Green Nightly",
+      "author": "Wild",
+      "summary": "Nightly. The player wears green and is called GREEN, and the title screen says WILD GREEN VERSION. PLAYER now takes effect where you are standing, the version ribbon follows the colour you picked, and the title screen's bands are right in every display mode.",
+      "version": "0.1.0",
+      "categories": [
+        "ART"
+      ],
+      "tags": [
+        "nightly",
+        "art",
+        "player",
+        "sprites",
+        "title",
+        "green"
+      ],
+      "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+      "github": "wild1walker/Gen1NightlyMods",
+      "api": 2,
+      "game_version": ">=0.1.37 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "permissions": [
+        "engine_internals"
+      ],
+      "games": [
+        "red"
+      ],
+      "license": "MIT",
+      "folder": "Wild@wild_green_nightly",
+      "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@wild_green_nightly/thumbnail.png",
+      "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@wild_green_nightly/description.md",
+      "update_check": "no installable release"
+    }
+  ],
+  "cart_count": 1,
+  "base_games": [
+    "red",
+    "blue",
+    "yellow",
+    "gold",
+    "silver",
+    "crystal"
+  ],
+  "carts": [
+    {
+      "id": "wild_green_nightly",
+      "title": "Wild Green Nightly",
+      "author": "Wild",
+      "version": "0.1.0",
+      "featured": true,
+      "summary": "Wild Green with the changes that are not in a release yet: a dark mode, a title screen that is the right colour in every display mode, and a player colour that takes effect where you are standing.",
+      "base": "red",
+      "seal": "sealed",
+      "shell": "#54377e",
+      "tags": [
+        "nightly",
+        "cart",
+        "bundle",
+        "collection",
+        "green",
+        "dark mode",
+        "theme",
+        "ui"
+      ],
+      "repo": "https://github.com/wild1walker/Gen1NightlyMods",
+      "github": "wild1walker/Gen1NightlyMods",
+      "game_version": ">=0.1.37 <2.0.0",
+      "license": "MIT",
+      "mods": [
+        {
+          "id": "gen1_wild_qol",
+          "source": "github",
+          "repo": "wild1walker/Gen1WildQOL",
+          "version": "1.26.0",
+          "sha256": "e15ba6bf6ca8457c9322f72b8a12eca5d849ce4ecd00e1bb746ddb43985ceca4"
+        },
+        {
+          "id": "crystal_animated_sprites_with_shiny_visuals",
+          "source": "github",
+          "repo": "distilledorion-sketch/crystal_animated_sprites_with_shiny_visuals",
+          "version": "2.0.2",
+          "sha256": "59b6204e66dc14c32b3035fea115236080dfc33ec86f928f04ac6974a1aca86c"
+        },
+        {
+          "id": "gen1_wild_ui_nightly",
+          "source": "github",
+          "repo": "wild1walker/Gen1NightlyMods",
+          "version": "0.1.0",
+          "sha256": "a55ca599558aa6ccf61f6dd92e91a8604b0383ee737e6062ea3696cf42cbd994"
+        },
+        {
+          "id": "wild_green_nightly",
+          "source": "github",
+          "repo": "wild1walker/Gen1NightlyMods",
+          "version": "0.1.0",
+          "sha256": "a62bf2160104950f0afaaad5dc73d1acb03914279c5f09c7e9d237b1eeaf9912",
+          "options": {
+            "ribbon": true
+          }
+        }
+      ],
+      "load_order": [
+        "gen1_wild_qol",
+        "crystal_animated_sprites_with_shiny_visuals",
+        "gen1_wild_ui_nightly",
+        "wild_green_nightly"
+      ],
+      "folder": "Wild@wild_green_nightly",
+      "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_green_nightly/thumbnail.png",
+      "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_green_nightly/description.md",
+      "update_check": "no installable release"
+    }
+  ]
+}

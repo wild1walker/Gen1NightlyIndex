@@ -1,0 +1,151 @@
+name: Build index
+
+# The feed is metadata about releases that live in another repo, so it goes
+# stale on its own schedule rather than on this one's: the hourly run catches a
+# nightly that was cut, and a push picks up an entry edited here.
+#
+# Hourly rather than nightly, which on this feed is nearly funny to have to
+# say: a channel called nightly is exactly the one whose cards must not be a
+# day behind its releases.  A nightly is cut whenever a change lands on main in
+# Gen1NightlyMods, and the whole point of testing one is testing it now.  A run
+# is about fifteen seconds and commits nothing unless something moved.
+#
+# Not faster than hourly, because nothing downstream can use it.  This feed is
+# what MODS > FIND MODS lists; it is not how an installed mod learns it is out
+# of date.  That check is the game asking the mod's own repo directly, on its
+# own six-hour cache (src/mods/ModUpdate.lua, CACHE_TTL), and it never reads
+# this file.  So an index fresher than an hour would be answering a question no
+# one is asking, and a schedule under about fifteen minutes is unreliable on
+# GitHub's runners anyway.
+#
+# site/** is deliberately not a trigger -- this job commits into it, and a
+# rebuild that changes nothing keeps the old generated_at, so a quiet hour is
+# silent unless something actually moved.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mods/**'
+      - 'carts/**'
+      - 'tools/**'
+      - '.github/workflows/index.yml'
+
+  # :17 rather than :00, where every other hourly job on GitHub is queued.
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: index
+  cancel-in-progress: false
+
+env:
+  # Everything the build may rewrite, in one place: the two retry paths below
+  # have to stage exactly the same set as the first attempt, and three copies
+  # of a path list is three chances to forget one.
+  #
+  #   site/data/index.json  the feed itself
+  #   mods/*/meta.json      each entry's fallback version, synced to what
+  #                         actually resolved -- without this, CI would rewrite
+  #                         them every hour and commit none of them
+  #   carts/*/meta.json     the same, plus the cart's pins, read from its own
+  #                         cart.json rather than copied here by hand
+  #   carts/*/thumbnail.png the cart's cartridge, fetched from its own repo
+  #   mods/*/thumbnail.png  the icons, redrawn below
+  #   site/favicon*.png     likewise
+  GENERATED: >-
+    site/data/index.json
+    mods/*/meta.json
+    mods/*/thumbnail.png
+    carts/*/meta.json
+    carts/*/thumbnail.png
+    site/favicon.png
+    site/favicon-32.png
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Drawn before the feed, and checked rather than trusted: both tools
+      # write only when the bytes change, so a committed PNG that is not what
+      # the tool draws simply shows up in the diff the commit step looks at.
+      - name: Redraw the icons and the favicon
+        run: |
+          python3 tools/make_icons.py
+          python3 tools/make_favicon.py
+
+      - name: Build the feed
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 tools/build_index.py
+
+      - name: Check it is a feed the launcher can read
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          feed = json.load(open("site/data/index.json", encoding="utf-8"))
+          assert feed["schema_version"] == 1, feed["schema_version"]
+          assert isinstance(feed["mods"], list) and feed["mods"], "no mods"
+          for m in feed["mods"]:
+              assert m.get("id"), m
+              assert m.get("title"), m
+          for c in feed.get("carts", []):
+              assert c.get("id") and c.get("mods"), c
+          print(f"{len(feed['mods'])} mod(s), {len(feed.get('carts', []))} cart(s), "
+                f"schema {feed['schema_version']}")
+          PY
+
+      - name: Commit the feed if it moved
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- $GENERATED; then
+            echo "feed unchanged; nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add $GENERATED
+          git commit -m "Rebuild the nightly index feed"
+
+          # main moves under this job: an entry landing while a run is in
+          # flight, or two rebuilds queued back to back.  A bare push loses the
+          # rebuilt feed and goes red for a reason that has nothing to do with
+          # the index, so a rejection is retried rather than failed on.
+          #
+          # The retry rebuilds rather than rebases.  The feed is a pure function
+          # of mods/ and carts/ plus the releases they name, so there is no
+          # merge to reason about: take whatever landed, regenerate on top of
+          # it, and push that.  If the regenerated feed matches what is already
+          # there -- the usual case, because the run that beat us published the
+          # same thing -- there is nothing left to do and the job is done.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected; rebuilding on top of origin/main (attempt $attempt)"
+            sleep $((attempt * 3))
+            git fetch origin main
+            git reset --hard origin/main
+            python3 tools/make_icons.py
+            python3 tools/make_favicon.py
+            python3 tools/build_index.py
+            if git diff --quiet -- $GENERATED; then
+              echo "the feed that landed is already current; nothing to push"
+              exit 0
+            fi
+            git add $GENERATED
+            git commit -m "Rebuild the nightly index feed"
+          done
+          echo "::error::could not push the rebuilt feed after 3 attempts"
+          exit 1
