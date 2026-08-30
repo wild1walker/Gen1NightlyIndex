@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-30T06:19:36Z",
+  "generated_at": "2026-08-30T06:21:17Z",
   "count": 4,
   "categories": [
     "GAMEPLAY",
@@ -54,7 +54,25 @@
       "folder": "Wild@gen1_wild_qol_nightly",
       "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_qol_nightly/thumbnail.png",
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_qol_nightly/description.md",
-      "update_check": "no installable release"
+      "update_check": "ok",
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "name": "Nightly 0.2.0",
+        "prerelease": true,
+        "published_at": "2026-08-30T06:19:43Z",
+        "zip": {
+          "name": "gen1_wild_qol_nightly-0.2.0.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.2.0/gen1_wild_qol_nightly-0.2.0.zip",
+          "size": 844898
+        }
+      },
+      "downloads": {
+        "total": 0,
+        "as_of": "2026-08-30T06:21:16Z"
+      },
+      "first_release": "2026-08-30T06:19:43Z",
+      "last_release": "2026-08-30T06:19:43Z"
     },
     {
       "id": "gen1_wild_ui_nightly",
@@ -95,7 +113,25 @@
       "folder": "Wild@gen1_wild_ui_nightly",
       "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_ui_nightly/thumbnail.png",
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_ui_nightly/description.md",
-      "update_check": "no installable release"
+      "update_check": "ok",
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "name": "Nightly 0.2.0",
+        "prerelease": true,
+        "published_at": "2026-08-30T06:19:43Z",
+        "zip": {
+          "name": "gen1_wild_ui_nightly-0.2.0.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.2.0/gen1_wild_ui_nightly-0.2.0.zip",
+          "size": 1235923
+        }
+      },
+      "downloads": {
+        "total": 0,
+        "as_of": "2026-08-30T06:21:16Z"
+      },
+      "first_release": "2026-08-30T06:19:43Z",
+      "last_release": "2026-08-30T06:19:43Z"
     },
     {
       "id": "gen1_bench_nightly",
@@ -129,7 +165,25 @@
       "folder": "Wild@gen1_bench_nightly",
       "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_bench_nightly/thumbnail.png",
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_bench_nightly/description.md",
-      "update_check": "no installable release"
+      "update_check": "ok",
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "name": "Nightly 0.2.0",
+        "prerelease": true,
+        "published_at": "2026-08-30T06:19:43Z",
+        "zip": {
+          "name": "gen1_bench_nightly-0.2.0.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.2.0/gen1_bench_nightly-0.2.0.zip",
+          "size": 15944
+        }
+      },
+      "downloads": {
+        "total": 0,
+        "as_of": "2026-08-30T06:21:15Z"
+      },
+      "first_release": "2026-08-30T06:19:43Z",
+      "last_release": "2026-08-30T06:19:43Z"
     },
     {
       "id": "wild_green_nightly",
@@ -164,7 +218,25 @@
       "folder": "Wild@wild_green_nightly",
       "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@wild_green_nightly/thumbnail.png",
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@wild_green_nightly/description.md",
-      "update_check": "no installable release"
+      "update_check": "ok",
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "name": "Nightly 0.2.0",
+        "prerelease": true,
+        "published_at": "2026-08-30T06:19:43Z",
+        "zip": {
+          "name": "wild_green_nightly-0.2.0.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.2.0/wild_green_nightly-0.2.0.zip",
+          "size": 110342
+        }
+      },
+      "downloads": {
+        "total": 0,
+        "as_of": "2026-08-30T06:21:16Z"
+      },
+      "first_release": "2026-08-30T06:19:43Z",
+      "last_release": "2026-08-30T06:19:43Z"
     }
   ],
   "cart_count": 1,
@@ -251,7 +323,25 @@
       "folder": "Wild@wild_green_nightly",
       "thumbnail": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_green_nightly/thumbnail.png",
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_green_nightly/description.md",
-      "update_check": "no installable release"
+      "update_check": "ok",
+      "latest": {
+        "version": "0.2.0",
+        "tag": "v0.2.0",
+        "name": "Nightly 0.2.0",
+        "prerelease": true,
+        "published_at": "2026-08-30T06:19:43Z",
+        "zip": {
+          "name": "wild_green_nightly-0.2.0.g1rcart",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.2.0/wild_green_nightly-0.2.0.g1rcart",
+          "size": 125446
+        }
+      },
+      "downloads": {
+        "total": 0,
+        "as_of": "2026-08-30T06:21:17Z"
+      },
+      "first_release": "2026-08-30T06:19:43Z",
+      "last_release": "2026-08-30T06:19:43Z"
     }
   ]
 }
