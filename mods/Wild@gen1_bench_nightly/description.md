@@ -15,6 +15,10 @@ from START.** It ships on no release.
 - **`MAP`** — what the backdrop is being picked from
 - **`START A BATTLE`** — pick an opponent and a level and press A
 - **`ASK FOR A SAVE`** — and a reading of whether it has landed
+- **`VOXEL`** — which voxel mod is installed, if any, and whether that one
+  moves the battle HUDs onto its own world canvas. `SNAP` means the XP bar and
+  the caught marker should be following them there; `FRAME` means they should
+  not, which is what two of the four forks want and is not a fault
 
 ## Why it is a mod of its own
 

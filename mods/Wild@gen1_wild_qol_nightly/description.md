@@ -28,6 +28,31 @@ where the fade pops itself off the stack, runs the engine's own ending and
 pushes itself back. The veil now has to have *stayed* full before anything is
 spent under it.
 
+## Works beside any voxel mod, and needs none
+
+A [voxel mod][voxel] redraws the overworld as a 3D diorama and can draw the
+battle over the map instead of over white paper. **Nothing here requires one
+and nothing changes if you have none.**
+
+There is not one of them — the original Dramatic Shape is defunct and three
+maintained forks have grown out of it, each under an id of its own because only
+one may run at a time. This bundle knew one of the six ids and now knows all of
+them: `BATTLE_ART_VOXEL_FORK`, `DRAMALESS_SHAPE`, `potato_voxel`, and the
+original lineage's three.
+
+**The caught marker no longer lands away from the foe's name.** The forks
+disagree about one thing: the Dramatic Shape lineage lifts the battle HUDs off
+the flat 160x144 frame and draws them on its own world canvas; `DRAMALESS_SHAPE`
+and `potato_voxel` leave them exactly where the engine put them. The marker read
+a fork with no answer as a fork saying yes, so under those two it was drawn onto
+a window-sized canvas at coordinates meant for a small one. It asks per frame
+now, and the answer is no unless something said yes.
+
+The follower keeps its scaled size in a voxel overworld under `potato_voxel`
+too, which was missing for the same reason.
+
+[voxel]: https://gen1recomp.org/voxel-mod
+
 ## Everything else
 
 Unchanged from the stable bundle: sprinting, autosave with rollback backups,

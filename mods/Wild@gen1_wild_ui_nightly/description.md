@@ -30,6 +30,28 @@ The asterisk means what it says: the battle command grid's four buttons
 (`FIGHT` / `PKMN` / `ITEM` / `RUN`) are the clearest buttons in the suite and
 are not coloured yet.
 
+## Works beside any voxel mod, and needs none
+
+A [voxel mod][voxel] redraws the overworld as a 3D diorama and can draw the
+battle over the map instead of over white paper. **Nothing here requires one
+and nothing changes if you have none.**
+
+There is not one of them — the original Dramatic Shape is defunct and three
+maintained forks have grown out of it, each under an id of its own because only
+one may run at a time. This bundle knew one of the six ids and now knows all of
+them: `BATTLE_ART_VOXEL_FORK`, `DRAMALESS_SHAPE`, `potato_voxel`, and the
+original lineage's three.
+
+**The XP bar follows the HUD again.** The forks disagree about one thing: the
+Dramatic Shape lineage lifts the battle HUDs off the flat 160x144 frame and
+draws them on its own world canvas; the other two leave them exactly where the
+engine put them. The bar sits under the player's HUD, so it has to go wherever
+that HUD went — and it asks per frame, because even a fork that snaps does not
+always manage it. Where it lands is read out of the fork's own published
+geometry, so it keeps finding the HUD when the fork retunes its layout.
+
+[voxel]: https://gen1recomp.org/voxel-mod
+
 ## Also new in 0.2.0
 
 **No more white bar above a wide arena.** A battle asks the renderer for a

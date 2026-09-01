@@ -75,6 +75,26 @@ before you have read the word. Nothing shouts: every tint holds the lightness
 the black-and-white page had, so no word is harder to read than it was. The
 asterisk is real — the battle command grid's four buttons are not coloured yet.
 
+### It works beside any voxel mod, and needs none
+
+A [voxel mod][voxel] redraws the overworld as a 3D diorama and can draw the
+battle over the map instead of over white paper. **Nothing in this channel
+requires one and nothing changes if you have none.**
+
+There is not one of them. The original Dramatic Shape is defunct and three
+maintained forks have grown out of it — `BATTLE_ART_VOXEL_FORK`,
+`DRAMALESS_SHAPE`, and `potato_voxel` for low-end devices — each under an id of
+its own, because only one may run at a time. The suite knew one of the six ids.
+
+They disagree about one thing: the Dramatic Shape lineage lifts the battle HUDs
+off the flat 160x144 frame and draws them on its own world canvas, and the
+other two leave them exactly where the engine put them. Anything drawn beside a
+HUD has to know which, and it asks per frame now — so the caught marker stops
+landing away from the foe's name under those two, and the XP bar has its 3D
+path back after a release without one.
+
+[voxel]: https://gen1recomp.org/voxel-mod
+
 ### Autosave stopped landing in the middle of a fade
 
 It knew that a fade is an animation and only knew it about the overworld's
