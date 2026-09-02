@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-01T21:46:46Z",
+  "generated_at": "2026-09-02T00:14:10Z",
   "count": 4,
   "categories": [
     "GAMEPLAY",
@@ -68,8 +68,8 @@
         }
       },
       "downloads": {
-        "total": 273,
-        "as_of": "2026-09-01T21:46:45Z"
+        "total": 283,
+        "as_of": "2026-09-02T00:14:06Z"
       },
       "first_release": "2026-08-31T00:14:21Z",
       "last_release": "2026-09-01T17:33:53Z"
@@ -127,8 +127,8 @@
         }
       },
       "downloads": {
-        "total": 273,
-        "as_of": "2026-09-01T21:46:45Z"
+        "total": 283,
+        "as_of": "2026-09-02T00:14:07Z"
       },
       "first_release": "2026-08-31T00:14:21Z",
       "last_release": "2026-09-01T17:33:53Z"
@@ -179,8 +179,8 @@
         }
       },
       "downloads": {
-        "total": 273,
-        "as_of": "2026-09-01T21:46:44Z"
+        "total": 283,
+        "as_of": "2026-09-02T00:14:06Z"
       },
       "first_release": "2026-08-31T00:14:21Z",
       "last_release": "2026-09-01T17:33:53Z"
@@ -232,8 +232,8 @@
         }
       },
       "downloads": {
-        "total": 273,
-        "as_of": "2026-09-01T21:46:46Z"
+        "total": 283,
+        "as_of": "2026-09-02T00:14:08Z"
       },
       "first_release": "2026-08-31T00:14:21Z",
       "last_release": "2026-09-01T17:33:53Z"
@@ -337,8 +337,8 @@
         }
       },
       "downloads": {
-        "total": 273,
-        "as_of": "2026-09-01T21:46:46Z"
+        "total": 283,
+        "as_of": "2026-09-02T00:14:10Z"
       },
       "first_release": "2026-08-31T00:14:21Z",
       "last_release": "2026-09-01T17:33:53Z"
