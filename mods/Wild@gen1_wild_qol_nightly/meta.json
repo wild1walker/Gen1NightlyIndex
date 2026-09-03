@@ -2,7 +2,7 @@
   "id": "gen1_wild_qol_nightly",
   "title": "Gen1WildQOL Nightly",
   "author": "Wild",
-  "summary": "Nightly. The quality-of-life half of the suite in one mod: sprinting, autosave, auto continue, sound, followers, all 151, EXP share, the move reminder, menu layout and the mod manager. Every feature switches on and off by itself.",
+  "summary": "Nightly. The quality-of-life half of the Gen1Wild suite in one mod: sprinting, autosave, auto continue, sound, followers, all 151, EXP share, the move reminder, menu layout and the mod manager. Every feature switches on and off by itself. On Gold, Silver and Crystal all of it runs except ALL 151, TRAINER REMATCH and NPC WALK, which are Gen 1 only, and it adds two that run there and nowhere else: ALL 251 and the GS BALL.",
   "version": "0.32.22",
   "featured": true,
   "categories": [
@@ -30,7 +30,8 @@
     "engine_internals"
   ],
   "games": [
-    "gen1"
+    "gen1",
+    "gen2"
   ],
   "license": "MIT"
 }
