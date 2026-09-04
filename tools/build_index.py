@@ -41,7 +41,9 @@ without it lists no carts (src/mods/ModIndex.lua, parse).  A cart listing
 names its repo in "cart_source" and its pins are read from that repo's own
 cart.json on every rebuild, never copied here by hand -- a hand-copied pin
 array rots the first time the cart re-pins anything, and ModIndex drops a cart
-row whose pins are empty.
+row whose pins are empty.  Add "cart_file" when the cart is not at that
+repo's root: one repository can ship several, and the nightly channel ships a
+Red cart and a Crystal one off one release.
 
 Releases are resolved from GitHub so a listing does not go stale: cut a
 nightly in wild1walker/Gen1NightlyMods and the hourly rebuild picks it up.  Set
@@ -60,6 +62,7 @@ every card resolves to.
 import json
 import os
 import pathlib
+import posixpath
 import re
 import sys
 import urllib.error
@@ -111,14 +114,46 @@ def api(url):
         return json.load(resp)
 
 
-def pick_asset(release, entry_id, suffix):
-    """The asset to install: the entry's own name first, any match after it."""
+def pick_asset(release, entry_id, suffix, strict=False):
+    """The asset to install: the entry's own name first, then the only one.
+
+    The fallback is deliberately narrow, and it was not always.  It used to be
+    "any match after it", which is right for a release carrying ONE installable
+    file -- a mod whose zip is named nothing like its id still resolves -- and
+    silently wrong for a release carrying several.
+
+    The nightly channel is the release that carries several: one tag holds
+    every mod's `.zip` and now a `.g1rcart` per cart, so a cart listing whose
+    own cartridge was not on the release yet resolved to the FIRST cartridge
+    there instead.  A player pressing INSTALL on Wild Crystal would have been
+    handed Wild Green, with nothing anywhere saying so.
+
+    So `strict` says whether the fallback may fire at all, and it is off for
+    exactly one kind of entry.
+
+    A MOD keeps it.  A third-party release may name its zip anything -- and
+    where a release carries one zip, that zip is the mod whatever it is
+    called.  Nothing is being guessed between.
+
+    A CART does not, and cannot.  A cartridge is named `<id>-<version>
+    .g1rcart` by the workflow that publishes it, deterministically, so a
+    cartridge that is not named for this cart is not this cart -- and the one
+    time that mattered, the fallback would have handed a player the wrong
+    game.  Answering nothing instead is what makes `resolve_releases` report
+    the entry as unresolved rather than shipping somebody else's file under
+    its name.
+    """
     matches = [a for a in release.get("assets", [])
                if str(a.get("name", "")).lower().endswith(suffix)]
     if not matches:
         return None
     named = [a for a in matches if entry_id.lower() in str(a["name"]).lower()]
-    a = (named or matches)[0]
+    if named:
+        a = named[0]
+    elif strict or len(matches) > 1:
+        return None
+    else:
+        a = matches[0]
     return {"name": a["name"], "url": a["browser_download_url"],
             "size": a.get("size")}
 
@@ -128,8 +163,12 @@ def pick_zip(release, mod_id):
 
 
 def pick_cart(release, cart_id):
-    """A cart publishes one .g1rcart, never a .zip -- see Guide: Cartkit."""
-    return pick_asset(release, cart_id, ".g1rcart")
+    """A cart publishes one .g1rcart, never a .zip -- see Guide: Cartkit.
+
+    Strict, because one release can carry several cartridges and the wrong one
+    is a different game rather than a different build.  See pick_asset.
+    """
+    return pick_asset(release, cart_id, ".g1rcart", strict=True)
 
 
 def version_of(release):
@@ -242,7 +281,7 @@ def fetch_raw(slug, path):
     return None, f"no {path} on main or master"
 
 
-def fetch_cart_json(slug):
+def fetch_cart_json(slug, path=None):
     """A cart's own cart.json, off its default branch.
 
     The pins are not written by hand here.  A cart listing has to carry the
@@ -252,8 +291,16 @@ def fetch_cart_json(slug):
     anything.  So the listing declares `cart_source` and the pins are read
     from the source of truth on every rebuild, the same way a mod's version
     is read from its release rather than trusted from meta.json.
+
+    `cart_file` says WHERE in that repository, and defaults to the root.  One
+    repository can ship more than one cart -- `wild1walker/Gen1NightlyMods`
+    ships a Red one and a Crystal one off the same release -- and cartkit
+    resolves any directory holding a `cart.json`, so the second and every one
+    after it live at `carts/<id>/cart.json`.  The FIRST stays at the root
+    because that is the path this function reached for before the field
+    existed, and a listing written without one has to keep working.
     """
-    body, problem = fetch_raw(slug, CART_FILE)
+    body, problem = fetch_raw(slug, path or CART_FILE)
     if body is None:
         return None, problem
     try:
@@ -311,15 +358,23 @@ def build_carts():
     carts = []
     for folder, meta in entries:
         source = meta["cart_source"]
-        cart, problem = fetch_cart_json(source)
+        cart, problem = fetch_cart_json(source, meta.get("cart_file"))
 
         row = dict(meta)
         row["folder"] = folder.name
         row.pop("cart_source", None)                 # a build input, not feed data
+        row.pop("cart_file", None)                   # the same: where, not what
         row.pop("automatic_version_check", None)
 
         if cart:
-            problem = sync_label(source, cart.get("label"), folder)
+            # A cart's label lives beside its own cart.json (cartkit refuses
+            # one that resolves outside the cart directory), so a cart in a
+            # subdirectory names its art relative to that directory too.
+            label = cart.get("label")
+            if label and meta.get("cart_file"):
+                label = posixpath.join(
+                    posixpath.dirname(meta["cart_file"]), label)
+            problem = sync_label(source, label, folder)
             if problem:
                 print(f"::warning::{folder.name}: {problem}", file=sys.stderr)
             # The cart decides what it is; the listing only says where to find

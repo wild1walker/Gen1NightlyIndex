@@ -39,11 +39,17 @@ adding both is fine — neither feed knows about the other.
 
 ## What is in it
 
-### The cart
+### The carts
 
 | | Cart | What it is |
 |---|---|---|
 | <img src="carts/Wild@wild_green_nightly/thumbnail.png" width="54" alt=""> | **Wild Green Nightly** | Wild Green, built from the branch. The same four mods the stable cart pins, two of them nightly. Sealed like the stable cart, so it can still go online — with other people running this same nightly. |
+| | **Wild Crystal Nightly** | The same suite on **Crystal**: both bundles and the test bench. This is where Gen 2 bug testing happens, and a preview of what the stable **Wild Crystal** cart will be. Its cartridge is dark blue against the Red nightly's dark purple. *(Label art not drawn yet, so it is a bare cartridge in that colour.)* |
+
+The Crystal cart pins the **test bench** and the stable cart it previews will
+not: bug testing is the reason a nightly cart exists. It does not pin
+`Wild Green Nightly`, which is Red's player, Red's names and Red's title
+screen and says so in its own manifest.
 
 ### The mods in it
 
@@ -139,7 +145,16 @@ tools/make_favicon.py   draws the tab icon from the same crescent
 A cart listing never carries hand-copied pins. It declares `cart_source` and
 the pins are read from that repo's own `cart.json` on every rebuild, and its
 thumbnail is fetched from the cartridge the cart itself draws — so a card and
-the thing it lists cannot drift apart.
+the thing it lists cannot drift apart. A listing adds `cart_file` when the
+cart is not at that repo's root: one repository can ship several, and the
+nightly channel ships a Red cart and a Crystal one off one release.
+
+Which is also why a cart resolves **strictly** to a cartridge named for it.
+A mod may name its zip anything and, where a release carries one, that zip is
+the mod. A cart may not: several cartridges ride one release, so one that is
+not named `<id>-<version>.g1rcart` is a different game rather than a
+different build, and a listing with no cartridge of its own resolves to
+nothing rather than to somebody else's.
 
 Every icon here is on the same night purple and carries the same crescent, so
 a card reads as a nightly before it has been read at all.
