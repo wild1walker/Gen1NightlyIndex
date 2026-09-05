@@ -26,7 +26,8 @@ Three mods, all three of them nightly:
   all of it runs on Crystal unchanged, because it was written against hooks
   rather than modules.
 - **Gen1WildUI Nightly** — the visual half. On Crystal that is `BACKDROPS`,
-  `POKEDEX`, `BAG`, `PARTY MENU`, `MENU LAYOUT`, `MOD MANAGER` and `UI THEME`.
+  `POKEDEX`, `BAG`, `PARTY MENU`, `MENU LAYOUT`, `MOD MANAGER`,
+  `BATTLE MENUS` and `UI THEME`.
 - **Test Bench** — a `BENCH` row on the START menu with everything this
   channel is changing on one screen, and a battle on demand. **It ships on no
   release**, which is the whole reason this cart exists: bug testing wants the
@@ -51,6 +52,16 @@ The Gen 2 arms are the newest code in the channel and the least played:
 - **`BACKDROPS` in Johto.** All twenty scenes are reached on a Gen 2 boot and
   six of them were re-dealt to Johto's bosses. A backdrop that does not suit
   where you are standing is worth reporting.
+- **The battle screen over a backdrop**, which is where nearly everything has
+  gone wrong so far. As of 0.32.31 the HUD has nothing behind it — no white
+  cells, no white slab around the HP and exp bars, no plate — and the pics
+  have paper in their own shape rather than a rectangle, so a trainer is not
+  see-through and does not sit on a sticker. Anything on that screen with a
+  box around it that should not have one is worth a screenshot.
+- **`BATTLE MENUS` on Crystal**, new in 0.32.31 and the first thing this mod
+  has ever drawn on a Gen 2 battle: the four commands in four boxes instead of
+  four words in one. The move list and the bug contest's menu are deliberately
+  still the cart's.
 
 It is sealed like the other carts, so it can still go online — with other
 people running this same nightly.
