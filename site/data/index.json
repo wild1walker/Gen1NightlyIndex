@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-05T17:49:15Z",
+  "generated_at": "2026-09-05T18:18:10Z",
   "count": 4,
   "categories": [
     "GAMEPLAY",
@@ -69,8 +69,8 @@
         }
       },
       "downloads": {
-        "total": 548,
-        "as_of": "2026-09-05T17:49:12Z"
+        "total": 585,
+        "as_of": "2026-09-05T18:18:07Z"
       },
       "first_release": "2026-09-01T17:10:38Z",
       "last_release": "2026-09-05T17:48:45Z"
@@ -129,8 +129,8 @@
         }
       },
       "downloads": {
-        "total": 548,
-        "as_of": "2026-09-05T17:49:13Z"
+        "total": 585,
+        "as_of": "2026-09-05T18:18:08Z"
       },
       "first_release": "2026-09-01T17:10:38Z",
       "last_release": "2026-09-05T17:48:45Z"
@@ -182,8 +182,8 @@
         }
       },
       "downloads": {
-        "total": 548,
-        "as_of": "2026-09-05T17:49:12Z"
+        "total": 585,
+        "as_of": "2026-09-05T18:18:07Z"
       },
       "first_release": "2026-09-01T17:10:38Z",
       "last_release": "2026-09-05T17:48:45Z"
@@ -235,8 +235,8 @@
         }
       },
       "downloads": {
-        "total": 548,
-        "as_of": "2026-09-05T17:49:13Z"
+        "total": 585,
+        "as_of": "2026-09-05T18:18:09Z"
       },
       "first_release": "2026-09-01T17:10:38Z",
       "last_release": "2026-09-05T17:48:45Z"
@@ -282,22 +282,22 @@
           "id": "gen1_wild_qol_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "d3b376572445b6078a3e1106364fb3b561b86af9dc56a02a83efd048d143a41d"
+          "version": "0.32.58",
+          "sha256": "eafa513959eb4a20f7e77ae227210cb3702bfd5d5c1ef1b5b516cfbaee17d548"
         },
         {
           "id": "gen1_wild_ui_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "a25e215790810a30d12ce75ebeb09098999101789eb228dd918616b09b61b4d8"
+          "version": "0.32.58",
+          "sha256": "feb7e352528dd41261ffd8ea6a2c5a008c94f58a1ecdb2ca21a90c8df48ca2ce"
         },
         {
           "id": "gen1_bench_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "272e1e8c1ddd3e9af8736865ba72145bf952e76ad1776243c514ae29c88e2abe"
+          "version": "0.32.58",
+          "sha256": "dfa9cacfe04837ca025194f17112eca5b6e1a33a52e633248287c5c3e10f0b5e"
         }
       ],
       "load_order": [
@@ -321,8 +321,8 @@
         }
       },
       "downloads": {
-        "total": 548,
-        "as_of": "2026-09-05T17:49:14Z"
+        "total": 585,
+        "as_of": "2026-09-05T18:18:10Z"
       },
       "first_release": "2026-09-01T17:10:38Z",
       "last_release": "2026-09-05T17:48:45Z"
@@ -356,8 +356,8 @@
           "id": "gen1_wild_qol_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "d3b376572445b6078a3e1106364fb3b561b86af9dc56a02a83efd048d143a41d"
+          "version": "0.32.58",
+          "sha256": "eafa513959eb4a20f7e77ae227210cb3702bfd5d5c1ef1b5b516cfbaee17d548"
         },
         {
           "id": "crystal_animated_sprites_with_shiny_visuals",
@@ -370,15 +370,15 @@
           "id": "gen1_wild_ui_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "a25e215790810a30d12ce75ebeb09098999101789eb228dd918616b09b61b4d8"
+          "version": "0.32.58",
+          "sha256": "feb7e352528dd41261ffd8ea6a2c5a008c94f58a1ecdb2ca21a90c8df48ca2ce"
         },
         {
           "id": "wild_green_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "d7f137a29fe423970ee94727f8e40e4016e4f375ae8e074dbb62d8a07a27687a",
+          "version": "0.32.58",
+          "sha256": "2431dfcc9e834cbc1db373749a0049be01541665841fc72e3e9990289bb8461e",
           "options": {
             "ribbon": true
           }
@@ -387,8 +387,8 @@
           "id": "gen1_bench_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.57",
-          "sha256": "272e1e8c1ddd3e9af8736865ba72145bf952e76ad1776243c514ae29c88e2abe"
+          "version": "0.32.58",
+          "sha256": "dfa9cacfe04837ca025194f17112eca5b6e1a33a52e633248287c5c3e10f0b5e"
         }
       ],
       "load_order": [
@@ -415,8 +415,8 @@
         }
       },
       "downloads": {
-        "total": 548,
-        "as_of": "2026-09-05T17:49:15Z"
+        "total": 585,
+        "as_of": "2026-09-05T18:18:10Z"
       },
       "first_release": "2026-09-01T17:10:38Z",
       "last_release": "2026-09-05T17:48:45Z"
