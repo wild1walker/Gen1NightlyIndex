@@ -3,7 +3,7 @@
   "title": "Test Bench",
   "author": "Wild",
   "summary": "Nightly only. A BENCH row on the START menu with everything this channel is changing on one screen -- the UI theme, the player's colour, the display mode, the battle layout, the backdrops -- and a battle on demand. It ships on no release. Runs on Gold, Silver and Crystal too.",
-  "version": "0.32.30",
+  "version": "0.32.31",
   "categories": [
     "TOOL"
   ],
