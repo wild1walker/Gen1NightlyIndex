@@ -31,22 +31,22 @@
       "id": "gen1_wild_qol_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.78",
-      "sha256": "efef93fdb36bd9621a6eeb9b619637c061eb2c5d7daf268627e9ba76dce463e7"
+      "version": "0.32.80",
+      "sha256": "633a03caef80b5b01eec04713274a9b385a4840c1b3abc1353102b814cff7791"
     },
     {
       "id": "gen1_wild_ui_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.78",
-      "sha256": "e8b859d9c21b4d8e716f1d86a96193145f20c5391d1dcab1f000493ae73fcbd4"
+      "version": "0.32.80",
+      "sha256": "f4ce013a114a5425cd148482aeae6fc33ef14e918fd00a3b6cbc2aed1ec32427"
     },
     {
       "id": "gen1_bench_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.78",
-      "sha256": "9a0f5941a5b92fb26c72f0035109046df5c05aca94c9c50d2c8d29fc2e0659c5"
+      "version": "0.32.80",
+      "sha256": "e45ccc71fc1c2a3a4dc5ecac6bee15890e12265f44a5c8fc8f362df1bb66a5d5"
     }
   ],
   "load_order": [
