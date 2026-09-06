@@ -29,8 +29,8 @@
       "id": "gen1_wild_qol_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.64",
-      "sha256": "6b5e7536a791d4d5cbafba630db037a3fabbc66e83a2b00815265008c541678b"
+      "version": "0.32.66",
+      "sha256": "33ecb7bbd1386e30de221375c7a5fe4bfc2705b82c45f51607fd22aacb548bdd"
     },
     {
       "id": "crystal_animated_sprites_with_shiny_visuals",
@@ -43,15 +43,15 @@
       "id": "gen1_wild_ui_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.64",
-      "sha256": "363027882283ea7415bf274caf22015a8869ac7eba8170bf57ab6690e4cbd030"
+      "version": "0.32.66",
+      "sha256": "4c47879d38da204bfb927d62d7b306107581971eca8490dc6613dfa6206ddcfb"
     },
     {
       "id": "wild_green_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.64",
-      "sha256": "ac2246ba84f044d4bd7039ed801e17e70e3c2a370efc6eccf821fa2324da228e",
+      "version": "0.32.66",
+      "sha256": "b5c4412bdd8dee0b955514913ea7c0636e4000d773fffafd37fc8721a339b3f3",
       "options": {
         "ribbon": true
       }
@@ -60,8 +60,8 @@
       "id": "gen1_bench_nightly",
       "source": "github",
       "repo": "wild1walker/Gen1NightlyMods",
-      "version": "0.32.64",
-      "sha256": "566fe0dada22338738d5ca782350097f4720384671a3cb0defe4c9bcb1e2088a"
+      "version": "0.32.66",
+      "sha256": "60feebbccc7c0ebc9f76674bc0c89ff5da03632752bde119c22e7f084518fac2"
     }
   ],
   "load_order": [
