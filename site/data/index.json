@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-06T20:48:38Z",
+  "generated_at": "2026-09-06T20:57:59Z",
   "count": 4,
   "categories": [
     "GAMEPLAY",
@@ -22,7 +22,7 @@
       "title": "Gen1WildQOL Nightly",
       "author": "Wild",
       "summary": "Nightly. The quality-of-life half of the suite in one mod: sprinting, autosave, auto continue, sound, followers, all 151, EXP share, the move reminder, menu layout and the mod manager. Every feature switches on and off by itself. Runs on Gold, Silver and Crystal too, where it adds ALL 251 and switches on Crystal's own CELEBI event.",
-      "version": "0.32.90",
+      "version": "0.32.91",
       "featured": true,
       "categories": [
         "QOL",
@@ -57,30 +57,30 @@
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_qol_nightly/description.md",
       "update_check": "ok",
       "latest": {
-        "version": "0.32.90",
-        "tag": "v0.32.90",
-        "name": "Nightly 0.32.90",
+        "version": "0.32.91",
+        "tag": "v0.32.91",
+        "name": "Nightly 0.32.91",
         "prerelease": true,
-        "published_at": "2026-09-06T20:48:02Z",
+        "published_at": "2026-09-06T20:57:28Z",
         "zip": {
-          "name": "gen1_wild_qol_nightly-0.32.90.zip",
-          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.90/gen1_wild_qol_nightly-0.32.90.zip",
+          "name": "gen1_wild_qol_nightly-0.32.91.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.91/gen1_wild_qol_nightly-0.32.91.zip",
           "size": 836300
         }
       },
       "downloads": {
-        "total": 656,
-        "as_of": "2026-09-06T20:48:35Z"
+        "total": 650,
+        "as_of": "2026-09-06T20:57:56Z"
       },
-      "first_release": "2026-09-05T04:32:14Z",
-      "last_release": "2026-09-06T20:48:02Z"
+      "first_release": "2026-09-05T04:41:23Z",
+      "last_release": "2026-09-06T20:57:28Z"
     },
     {
       "id": "gen1_wild_ui_nightly",
       "title": "Gen1WildUI Nightly",
       "author": "Wild",
       "summary": "Nightly. The visual half of the suite in one mod, plus a UI THEME row on the OPTION screen: LIGHT, DARK, or COLORFUL (work in progress). Every feature still switches on and off by itself. Runs on Gold, Silver and Crystal too.",
-      "version": "0.32.90",
+      "version": "0.32.91",
       "featured": true,
       "categories": [
         "UI",
@@ -117,30 +117,30 @@
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_wild_ui_nightly/description.md",
       "update_check": "ok",
       "latest": {
-        "version": "0.32.90",
-        "tag": "v0.32.90",
-        "name": "Nightly 0.32.90",
+        "version": "0.32.91",
+        "tag": "v0.32.91",
+        "name": "Nightly 0.32.91",
         "prerelease": true,
-        "published_at": "2026-09-06T20:48:02Z",
+        "published_at": "2026-09-06T20:57:28Z",
         "zip": {
-          "name": "gen1_wild_ui_nightly-0.32.90.zip",
-          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.90/gen1_wild_ui_nightly-0.32.90.zip",
-          "size": 1837947
+          "name": "gen1_wild_ui_nightly-0.32.91.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.91/gen1_wild_ui_nightly-0.32.91.zip",
+          "size": 1838417
         }
       },
       "downloads": {
-        "total": 656,
-        "as_of": "2026-09-06T20:48:35Z"
+        "total": 650,
+        "as_of": "2026-09-06T20:57:57Z"
       },
-      "first_release": "2026-09-05T04:32:14Z",
-      "last_release": "2026-09-06T20:48:02Z"
+      "first_release": "2026-09-05T04:41:23Z",
+      "last_release": "2026-09-06T20:57:28Z"
     },
     {
       "id": "gen1_bench_nightly",
       "title": "Test Bench",
       "author": "Wild",
       "summary": "Nightly only. A BENCH row on the START menu with everything this channel is changing on one screen -- the UI theme, the player's colour, the display mode, the battle layout, the backdrops -- and a battle on demand. It ships on no release. Runs on Gold, Silver and Crystal too.",
-      "version": "0.32.90",
+      "version": "0.32.91",
       "categories": [
         "TOOL"
       ],
@@ -170,30 +170,30 @@
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@gen1_bench_nightly/description.md",
       "update_check": "ok",
       "latest": {
-        "version": "0.32.90",
-        "tag": "v0.32.90",
-        "name": "Nightly 0.32.90",
+        "version": "0.32.91",
+        "tag": "v0.32.91",
+        "name": "Nightly 0.32.91",
         "prerelease": true,
-        "published_at": "2026-09-06T20:48:02Z",
+        "published_at": "2026-09-06T20:57:28Z",
         "zip": {
-          "name": "gen1_bench_nightly-0.32.90.zip",
-          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.90/gen1_bench_nightly-0.32.90.zip",
+          "name": "gen1_bench_nightly-0.32.91.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.91/gen1_bench_nightly-0.32.91.zip",
           "size": 19297
         }
       },
       "downloads": {
-        "total": 656,
-        "as_of": "2026-09-06T20:48:34Z"
+        "total": 650,
+        "as_of": "2026-09-06T20:57:56Z"
       },
-      "first_release": "2026-09-05T04:32:14Z",
-      "last_release": "2026-09-06T20:48:02Z"
+      "first_release": "2026-09-05T04:41:23Z",
+      "last_release": "2026-09-06T20:57:28Z"
     },
     {
       "id": "wild_green_nightly",
       "title": "Wild Green Nightly",
       "author": "Wild",
       "summary": "Nightly. The player wears green and is called GREEN, and the title screen says WILD GREEN VERSION. PLAYER now takes effect where you are standing, the version ribbon follows the colour you picked, and the title screen's bands are right in every display mode.",
-      "version": "0.32.90",
+      "version": "0.32.91",
       "categories": [
         "ART"
       ],
@@ -223,23 +223,23 @@
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/mods/Wild@wild_green_nightly/description.md",
       "update_check": "ok",
       "latest": {
-        "version": "0.32.90",
-        "tag": "v0.32.90",
-        "name": "Nightly 0.32.90",
+        "version": "0.32.91",
+        "tag": "v0.32.91",
+        "name": "Nightly 0.32.91",
         "prerelease": true,
-        "published_at": "2026-09-06T20:48:02Z",
+        "published_at": "2026-09-06T20:57:28Z",
         "zip": {
-          "name": "wild_green_nightly-0.32.90.zip",
-          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.90/wild_green_nightly-0.32.90.zip",
+          "name": "wild_green_nightly-0.32.91.zip",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.91/wild_green_nightly-0.32.91.zip",
           "size": 59029
         }
       },
       "downloads": {
-        "total": 656,
-        "as_of": "2026-09-06T20:48:36Z"
+        "total": 650,
+        "as_of": "2026-09-06T20:57:57Z"
       },
-      "first_release": "2026-09-05T04:32:14Z",
-      "last_release": "2026-09-06T20:48:02Z"
+      "first_release": "2026-09-05T04:41:23Z",
+      "last_release": "2026-09-06T20:57:28Z"
     }
   ],
   "cart_count": 2,
@@ -256,7 +256,7 @@
       "id": "wild_crystal_nightly",
       "title": "Wild Crystal Nightly",
       "author": "Wild",
-      "version": "0.32.90",
+      "version": "0.32.91",
       "featured": true,
       "summary": "The suite on Crystal -- both halves and the test bench -- with the changes that are not in a release yet. This is where Gen 2 bug testing happens.",
       "base": "crystal",
@@ -282,22 +282,22 @@
           "id": "gen1_wild_qol_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "e9b65ddbb462631c8ffe9de5edc77b1d558448feda7fe0267cab8853921672cf"
+          "version": "0.32.91",
+          "sha256": "45e85af6e75c73718d89cb4c82ce4f9d20904565da27dbc7c91399a6f2876ed2"
         },
         {
           "id": "gen1_wild_ui_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "5e29ed5877f77162225b4536aa516fbf5da7b3fae021a419c916cb5210d1c81d"
+          "version": "0.32.91",
+          "sha256": "cd8e099efc0e058e942bfa94501a59f24acd20c9efaff79e26281d23ab7d8910"
         },
         {
           "id": "gen1_bench_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "6d2db6773a9dd2c32e6de2238477fb280e13a884821aa0e24276fc79423724b9"
+          "version": "0.32.91",
+          "sha256": "bb50309bc709ee82d64450a78ffc4374fa23e3e5261129384d3636ed99291613"
         }
       ],
       "load_order": [
@@ -309,29 +309,29 @@
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_crystal_nightly/description.md",
       "update_check": "ok",
       "latest": {
-        "version": "0.32.90",
-        "tag": "v0.32.90",
-        "name": "Nightly 0.32.90",
+        "version": "0.32.91",
+        "tag": "v0.32.91",
+        "name": "Nightly 0.32.91",
         "prerelease": true,
-        "published_at": "2026-09-06T20:48:02Z",
+        "published_at": "2026-09-06T20:57:28Z",
         "zip": {
-          "name": "wild_crystal_nightly-0.32.90.g1rcart",
-          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.90/wild_crystal_nightly-0.32.90.g1rcart",
+          "name": "wild_crystal_nightly-0.32.91.g1rcart",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.91/wild_crystal_nightly-0.32.91.g1rcart",
           "size": 1336
         }
       },
       "downloads": {
-        "total": 656,
-        "as_of": "2026-09-06T20:48:37Z"
+        "total": 650,
+        "as_of": "2026-09-06T20:57:58Z"
       },
-      "first_release": "2026-09-05T04:32:14Z",
-      "last_release": "2026-09-06T20:48:02Z"
+      "first_release": "2026-09-05T04:41:23Z",
+      "last_release": "2026-09-06T20:57:28Z"
     },
     {
       "id": "wild_green_nightly",
       "title": "Wild Green Nightly",
       "author": "Wild",
-      "version": "0.32.90",
+      "version": "0.32.91",
       "featured": true,
       "summary": "Wild Green with the changes that are not in a release yet, plus a test bench on the START menu. For testing, not for a playthrough you care about.",
       "base": "red",
@@ -356,8 +356,8 @@
           "id": "gen1_wild_qol_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "e9b65ddbb462631c8ffe9de5edc77b1d558448feda7fe0267cab8853921672cf"
+          "version": "0.32.91",
+          "sha256": "45e85af6e75c73718d89cb4c82ce4f9d20904565da27dbc7c91399a6f2876ed2"
         },
         {
           "id": "crystal_animated_sprites_with_shiny_visuals",
@@ -370,15 +370,15 @@
           "id": "gen1_wild_ui_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "5e29ed5877f77162225b4536aa516fbf5da7b3fae021a419c916cb5210d1c81d"
+          "version": "0.32.91",
+          "sha256": "cd8e099efc0e058e942bfa94501a59f24acd20c9efaff79e26281d23ab7d8910"
         },
         {
           "id": "wild_green_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "6ade96a16b528e4da3306c29afb0920c24ac846343171aba72ccc7b2d00c676e",
+          "version": "0.32.91",
+          "sha256": "24f967e414fccd5f78b4f45966dbf372af03ebf617dc94abe70c592b2e01aec9",
           "options": {
             "ribbon": true
           }
@@ -387,8 +387,8 @@
           "id": "gen1_bench_nightly",
           "source": "github",
           "repo": "wild1walker/Gen1NightlyMods",
-          "version": "0.32.90",
-          "sha256": "6d2db6773a9dd2c32e6de2238477fb280e13a884821aa0e24276fc79423724b9"
+          "version": "0.32.91",
+          "sha256": "bb50309bc709ee82d64450a78ffc4374fa23e3e5261129384d3636ed99291613"
         }
       ],
       "load_order": [
@@ -403,23 +403,23 @@
       "description_url": "https://raw.githubusercontent.com/wild1walker/Gen1NightlyIndex/main/carts/Wild@wild_green_nightly/description.md",
       "update_check": "ok",
       "latest": {
-        "version": "0.32.90",
-        "tag": "v0.32.90",
-        "name": "Nightly 0.32.90",
+        "version": "0.32.91",
+        "tag": "v0.32.91",
+        "name": "Nightly 0.32.91",
         "prerelease": true,
-        "published_at": "2026-09-06T20:48:02Z",
+        "published_at": "2026-09-06T20:57:28Z",
         "zip": {
-          "name": "wild_green_nightly-0.32.90.g1rcart",
-          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.90/wild_green_nightly-0.32.90.g1rcart",
+          "name": "wild_green_nightly-0.32.91.g1rcart",
+          "url": "https://github.com/wild1walker/Gen1NightlyMods/releases/download/v0.32.91/wild_green_nightly-0.32.91.g1rcart",
           "size": 125456
         }
       },
       "downloads": {
-        "total": 656,
-        "as_of": "2026-09-06T20:48:38Z"
+        "total": 650,
+        "as_of": "2026-09-06T20:57:59Z"
       },
-      "first_release": "2026-09-05T04:32:14Z",
-      "last_release": "2026-09-06T20:48:02Z"
+      "first_release": "2026-09-05T04:41:23Z",
+      "last_release": "2026-09-06T20:57:28Z"
     }
   ]
 }
